@@ -13,7 +13,7 @@ func main() {
 	if err != nil {
 		os.Exit(1)
 	}
-	if c := a*b%2; c == 0 {
+	if c := a * b % 2; c == 0 {
 		fmt.Println("Even")
 	} else {
 		fmt.Println("Odd")

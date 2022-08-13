@@ -32,7 +32,7 @@ func main() {
 
 	sum := sum(a, b, c)
 
-	fmt.Printf("%d %s\n",sum, s)
+	fmt.Printf("%d %s\n", sum, s)
 }
 
 func sum(a, b, c int) int {
