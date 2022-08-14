@@ -18,15 +18,15 @@ func main() {
 	var counter int
 	var scounter int
 
-	for i:=0; i<n; i++{
+	for i := 0; i < n; i++ {
 		x = append(x, scan())
 	}
 
-	eternal:
+eternal:
 	for {
 		for i, v := range x {
-			if a := v%2; a==0 {
-				x[i] = v/2
+			if a := v % 2; a == 0 {
+				x[i] = v / 2
 				counter++
 			} else {
 				break eternal
