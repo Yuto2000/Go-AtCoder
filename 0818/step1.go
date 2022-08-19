@@ -4,10 +4,9 @@
 package main
 
 import (
-	"fmt"
 	"bufio"
+	"fmt"
 	"os"
-
 )
 
 var sc = bufio.NewScanner(os.Stdin)
@@ -15,26 +14,27 @@ var sc = bufio.NewScanner(os.Stdin)
 func main() {
 	dream := "maerd"
 	erase := "esare"
-	dreamer:="remaerd"
-	eraser :="resare"
+	dreamer := "remaerd"
+	eraser := "resare"
 	sc.Scan()
 	s1 := sc.Text()
 	s := reverse(s1)
-	for  {
-		if string(s[:5]) == dream {
-			s = append(s[:0], s[5:]...)
+	for {
+		if len(s) >= 5 && string(s[:5]) == dream {
+			s = s[5:]
 
-		} else if string(s[:7]) == dreamer {
-			s = append(s[:0], s[7:]...)
+		} else if len(s) >= 7 && string(s[:7]) == dreamer {
+			s = s[7:]
 
-		} else if string(s[:5]) == erase {
-			s = append(s[:0], s[5:]...)
+		} else if len(s) >= 5 && string(s[:5]) == erase {
+			s = s[5:]
 
-		} else if string(s[:6]) == eraser {
-			s = append(s[:0], s[6:]...)
+		} else if len(s) >= 6 && string(s[:6]) == eraser {
+			s = s[6:]
 
 		} else if len(s) == 0 {
 			fmt.Println("YES")
+			break
 
 		} else {
 			fmt.Println("NO")
@@ -45,7 +45,7 @@ func main() {
 
 func reverse(s string) []rune {
 	rs := []rune(s)
-	for i, j := 0, len(s)-1; i<j; i,j=i+1, j-1 {
+	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
 		rs[i], rs[j] = rs[j], rs[i]
 	}
 	return rs
